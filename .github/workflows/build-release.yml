@@ -1,0 +1,79 @@
+name: Windows Build/Release
+
+on:
+  release:
+    types: [published]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-windows:
+    name: Build Windows exe
+    runs-on: windows-2022
+    steps:
+      - name: Checkout
+        uses: actions/checkout@900f2210b1d28bbbd0bd22d17926b9e224e8f231
+        with:
+          fetch-depth: 0
+
+      - name: Setup Python
+        uses: actions/setup-python@c8813ba1bc76ebf779b911ad8ffccbf2e449cb48
+        with:
+          python-version: "3.12"
+
+      - name: Install uv
+        run: python -m pip install uv
+
+      - name: Install dependencies
+        run: |
+          uv venv --clear --python=3.12
+          uv pip install pyinstaller
+          uv pip install -r requirements.txt
+
+      - name: Build with PyInstaller
+        run: > # Copied from build.bat, may get out of sync if this is modified
+          uv run pyinstaller
+          --noconfirm
+          --name "AutoSplit64plus"
+          --icon "resources/gui/icons/as64plus.ico"
+          --noconsole
+          --clean
+          --noupx
+          --contents-directory "libraries"
+          AutoSplit64.py
+
+      - name: Build OBS plugin
+        working-directory: obs-plugin
+        run: |
+          cmake --preset windows-x64
+          cmake --build --preset windows-x64
+
+      - name: Copy assets into dist
+        run: |
+          xcopy /E /I /Y logic      dist\AutoSplit64plus\logic
+          xcopy /E /I /Y resources  dist\AutoSplit64plus\resources
+          xcopy /E /I /Y routes     dist\AutoSplit64plus\routes
+          xcopy /E /I /Y templates  dist\AutoSplit64plus\templates
+          xcopy /Y defaults.ini     dist\AutoSplit64plus\
+          xcopy /Y obs-plugin\build_x64\RelWithDebInfo\autosplit64plus-framegrabber.dll dist\AutoSplit64plus\obs-plugin\
+
+      - name: Tar release artifact
+        run: |
+          Compress-Archive -Path dist\AutoSplit64plus\* -DestinationPath AutoSplit64plus-windows.zip
+
+      - name: Upload to release (release only)
+        uses: softprops/action-gh-release@2bc819c87a4e63a4ac4e581a02085318bd49975a
+        if: github.event_name == 'release'
+        with:
+          files: AutoSplit64plus-windows.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Upload artifact (workflow_dispatch only)
+        uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a
+        if: github.event_name == 'workflow_dispatch'
+        with:
+          name: AutoSplit64plus-windows
+          path: AutoSplit64plus-windows.zip
