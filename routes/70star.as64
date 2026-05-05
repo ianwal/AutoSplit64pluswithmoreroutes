@@ -1,0 +1,172 @@
+{
+    "__route__": true,
+    "title": "70 Star IHOP",
+    "category": "70 Star",
+    "initial_star": 0,
+    "version": "US",
+    "timing": "RTA",
+    "splits": [
+        {
+            "title": "slide3",
+            "star_count": 3,
+            "fade_out": 1,
+            "fade_in": 0,
+            "xcam": -1,
+            "split_type": "Normal",
+            "icon_path": ""
+        },
+        {
+            "title": "wf10",
+            "star_count": 10,
+            "fade_out": 1,
+            "fade_in": 0,
+            "xcam": -1,
+            "split_type": "Normal",
+            "icon_path": ""
+        },
+        {
+            "title": "wc",
+            "star_count": 12,
+            "fade_out": 1,
+            "fade_in": 0,
+            "xcam": -1,
+            "split_type": "Normal",
+            "icon_path": ""
+        },
+        {
+            "title": "dw13",
+            "star_count": 13,
+            "fade_out": 2,
+            "fade_in": 0,
+            "xcam": -1,
+            "split_type": "Normal",
+            "icon_path": ""
+        },
+        {
+            "title": "ccm17",
+            "star_count": 17,
+            "fade_out": 1,
+            "fade_in": 0,
+            "xcam": -1,
+            "split_type": "Normal",
+            "icon_path": ""
+        },
+        {
+            "title": "bbh19",
+            "star_count": 19,
+            "fade_out": 1,
+            "fade_in": 0,
+            "xcam": -1,
+            "split_type": "Normal",
+            "icon_path": ""
+        },
+        {
+            "title": "ssl24",
+            "star_count": 24,
+            "fade_out": 1,
+            "fade_in": 0,
+            "xcam": -1,
+            "split_type": "Normal",
+            "icon_path": ""
+        },
+        {
+            "title": "lll30",
+            "star_count": 30,
+            "fade_out": 1,
+            "fade_in": 0,
+            "xcam": -1,
+            "split_type": "Normal",
+            "icon_path": ""
+        },
+        {
+            "title": "ddd33",
+            "star_count": 33,
+            "fade_out": 1,
+            "fade_in": 0,
+            "xcam": -1,
+            "split_type": "Normal",
+            "icon_path": ""
+        },
+        {
+            "title": "fs34",
+            "star_count": 34,
+            "fade_out": 2,
+            "fade_in": 0,
+            "xcam": -1,
+            "split_type": "Normal",
+            "icon_path": ""
+        },
+        {
+            "title": "wdw39",
+            "star_count": 39,
+            "fade_out": 1,
+            "fade_in": 0,
+            "xcam": -1,
+            "split_type": "Normal",
+            "icon_path": ""
+        },
+        {
+            "title": "thi42",
+            "star_count": 42,
+            "fade_out": 1,
+            "fade_in": 0,
+            "xcam": -1,
+            "split_type": "Normal",
+            "icon_path": ""
+        },
+        {
+            "title": "ttm48",
+            "star_count": 48,
+            "fade_out": 1,
+            "fade_in": 0,
+            "xcam": -1,
+            "split_type": "Normal",
+            "icon_path": ""
+        },
+        {
+            "title": "sl52",
+            "star_count": 52,
+            "fade_out": 1,
+            "fade_in": 0,
+            "xcam": -1,
+            "split_type": "Normal",
+            "icon_path": ""
+        },
+        {
+            "title": "hmc58",
+            "star_count": 58,
+            "fade_out": 1,
+            "fade_in": 0,
+            "xcam": -1,
+            "split_type": "Normal",
+            "icon_path": ""
+        },
+        {
+            "title": "rr62",
+            "star_count": 62,
+            "fade_out": 1,
+            "fade_in": 0,
+            "xcam": -1,
+            "split_type": "Normal",
+            "icon_path": ""
+        },
+        {
+            "title": "ttc69",
+            "star_count": 69,
+            "fade_out": 1,
+            "fade_in": 0,
+            "xcam": -1,
+            "split_type": "Normal",
+            "icon_path": ""
+        },
+        {
+            "title": "bits",
+            "star_count": 70,
+            "fade_out": -1,
+            "fade_in": -1,
+            "xcam": -1,
+            "split_type": "Final",
+            "icon_path": ""
+        }
+    ]
+}
