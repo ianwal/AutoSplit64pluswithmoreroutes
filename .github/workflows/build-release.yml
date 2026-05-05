@@ -33,7 +33,16 @@ jobs:
           uv pip install -r requirements.txt
 
       - name: Build with PyInstaller
-        run: uv run pyinstaller AutoSplit64plus.spec --noconfirm --clean
+        run: >
+          uv run pyinstaller
+          --noconfirm
+          --name "AutoSplit64plus"
+          --icon "resources/gui/icons/as64plus.ico"
+          --noconsole
+          --clean
+          --noupx
+          --contents-directory "libraries"
+          AutoSplit64.py
 
       - name: Build OBS plugin
         working-directory: obs-plugin
